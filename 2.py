@@ -33,7 +33,7 @@ sum_2 = 0
 
 for i, el in enumerate(my_list):
     el_sum = 0
-    el += 10
+    el += 17
 
     while el != 0:
         el_sum += el % 10
