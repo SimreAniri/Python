@@ -21,7 +21,7 @@ i = 0
 
 for i, el in enumerate(product_price):
 
-    print(f'{int(el)} руб {int(el % 1 * 100):02d} коп', end='')
+    print(f'{int(el)} руб {round(el % 1 * 100):02d} коп', end='')
 
     if i == len(product_price) - 1:
         print()
@@ -34,7 +34,7 @@ print("\nОтсортированный по возрастанию список
 
 for i, el in enumerate(sorted(product_price)):
 
-    print(f'{int(el)} руб {int(el % 1 * 100):02d} коп', end='')
+    print(f'{int(el)} руб {round(el % 1 * 100):02d} коп', end='')
 
     if i == len(product_price) - 1:
         print()
@@ -50,7 +50,7 @@ sorted_product_price = sorted(product_price, reverse=True)
 
 for i, el in enumerate(sorted_product_price):
 
-    print(f'{int(el)} руб {int(el % 1 * 100):02d} коп', end='')
+    print(f'{int(el)} руб {round(el % 1 * 100):02d} коп', end='')
 
     if i == len(sorted_product_price) - 1:
         print()

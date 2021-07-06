@@ -22,8 +22,11 @@ while i < len(my_list):
         i += 1
         my_list.insert(i + 1, '"')
 
-    elif (my_list[i].startswith('+') or my_list[i].startswith('-')) and my_list[i][:1].isdigit():
+    elif (my_list[i].startswith('+') or my_list[i].startswith('-')) and my_list[i][1:].isdigit():
         my_list[i] = my_list[i][0] + my_list[i][1:].zfill(2)
+        my_list.insert(i, '"')
+        i += 1
+        my_list.insert(i + 1, '"')
 
     i += 1
 
@@ -35,7 +38,7 @@ i = 0
 while i < len(my_list):
 
     if my_list[i] == '"':
-        my_str += ''.join(my_list[i: i+2])
+        my_str += ''.join(my_list[i: i+2 + 1])
         i += 2
 
     else:
