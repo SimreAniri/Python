@@ -32,6 +32,10 @@ def get_jokes(n, rep=True):
             jokes.append(joke)
 
     else:
+        if n > 5:
+            print('Количество уникальных слов меньше 5, запрос не может быть выполнен')
+            return
+
         nouns = random.sample(nouns, n)
         adverbs = random.sample(adverbs, n)
         adjectives = random.sample(adjectives, n)
@@ -49,5 +53,6 @@ print()
 
 get_jokes(2, rep=False)
 get_jokes(4, rep=False)
+get_jokes(10, rep=False)
 
 help(get_jokes)

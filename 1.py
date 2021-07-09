@@ -21,7 +21,7 @@ def num_translate(num):
                 'nine': 'девять', 'ten': 'десять'}
 
     if num.lower() not in num_dict:
-        return None
+        return
 
     else:
         if num.istitle():
