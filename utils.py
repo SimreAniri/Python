@@ -33,7 +33,8 @@ def currency_rates(code):
         for el in child:
             if el.tag == 'CharCode' and el.text == code.upper():
 
-                return cur_date, child.find('Name').text, child.find('Value').text
+                return cur_date, child.find('Name').text, float(child.find('Value').text.replace(',', '.')) \
+                       / int(child.find('Nominal').text)
 
     return
 
@@ -47,5 +48,6 @@ if __name__ =='__main__':
     for cur in ['USD', 'EUR']:
         date, cur_name, exchange_rate = currency_rates(cur)
         print(f'{cur_name}. Дата: {date}\nКурс перевода в рубли: {exchange_rate}\n')
+        print(type(exchange_rate))
 
     print(type(date))
