@@ -12,4 +12,7 @@ print(odd_nums(3))
 
 od_to_5 = (i for i in range(1, 5 + 1, 2))
 print(od_to_5)
-print(*od_to_5)
+print(next(od_to_5))
+print(next(od_to_5))
+print(next(od_to_5))
+print(next(od_to_5))
