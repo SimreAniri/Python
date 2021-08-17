@@ -48,7 +48,3 @@ print(calc_cube(5))
 print(calc_func(5, 4))
 
 help(calc_cube)
-
-xy = lambda x:x>0
-
-print(xy(-7))
