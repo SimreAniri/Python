@@ -32,7 +32,7 @@ class Note:
         data = {"name": self.__name,
                 "text": self.text,
                 "id": self.__id,
-                "data": self.__data}
+                "data": datetime.now().strftime("%Y-%m-%d %H:%M")}
 
         if self.__new:
             with open(self.__file, "w") as f:
@@ -58,6 +58,7 @@ class Note:
                 else:
                     print("Запись отменена")
                     return False
+        self.__data = datetime.now().strftime("%Y-%m-%d %H:%M")
         return True
 
     def read_json(self, file):
