@@ -20,6 +20,9 @@ class Note:
     def get_file_name(self):
         return self.__file
 
+    def get_data(self):
+        return datetime.strptime(self.__data, "%Y-%m-%d %H:%M")
+
     def change_name(self, name):
         self.__name = name
         self.__file = f"{self.__id}_{self.__name}.json"

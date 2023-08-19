@@ -1,6 +1,7 @@
 from note import Note
 import read_notes
 import change_notes
+import  find_notes
 from add_note import add_note
 import os
 
@@ -10,6 +11,7 @@ print("Добро пожаловать в менеджер заметок")
 print("Для управления используйте следующие команды:\n"
       "add - добавить заметку\n"
       "read - считать заметки\n"
+      "find by data - найти заметки по дате\n"
       "read note - прочитать заметку\n"
       "change - изменить заметку\n"
       "del - удалить заметку\n"
@@ -26,6 +28,12 @@ while param.lower() != "q":
         for note in read_notes.read_dir():
             print(note)
 
+    elif param.lower() == "find by data":
+        data = input("Введите дату в формате ГГГГ-ММ-ДД: ")
+        print("Найдены следующие заметки:")
+        for note in find_notes.find_notes_by_date(data):
+            print(note)
+
     elif param.lower() == "read note":
         file = input("Какую заметку нужно прочитать: ")
         read_notes.read_note(file)
@@ -39,3 +47,4 @@ while param.lower() != "q":
         change_notes.del_note(file)
 
     param = input("Что требуется сделать: ")
+
